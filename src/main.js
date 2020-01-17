@@ -3,6 +3,7 @@ import mui from './assets/mui/js/mui.min.js'
 import VueLazyload from 'vue-lazyload'
 import loading from './common/images/loading.gif'
 import './validate'
+import store from './vuex/store'
 import router from './router'
 import  App from './App.vue'
 import  API from './api'
@@ -26,5 +27,6 @@ Vue.config.productionTip = true
 new Vue({
     components:{App},
     template:'<App/>',
-    router
+    router,
+    store
 }).$mount("#app")
