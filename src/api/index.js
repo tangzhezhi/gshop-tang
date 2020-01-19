@@ -3,9 +3,11 @@
 每个函数的返回值都是promise对象
 */
 import user from './user'
+import msite from './msite'
 
 
 
 export default {
-    user
+    user,
+    msite
 }
