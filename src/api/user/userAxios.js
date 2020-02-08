@@ -9,7 +9,6 @@ const mui = window.mui;
 
 
 userAxios.interceptors.response.use((response)=>{
-    mui.toast("message",response.data)
     return response.data
 },(error)=>{
     mui.toast("error",error)

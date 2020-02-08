@@ -8,6 +8,7 @@ import mutations from './mutations'
 import actions from './actions'
 import getters from './getters'
 import user from './modules/user'
+import msite from './modules/msite'
 Vue.use(Vuex)
 
 export default new Vuex.Store({
@@ -15,7 +16,8 @@ export default new Vuex.Store({
   actions, // 总actions
   getters,
   modules: {
-      user
+      user,
+      msite
   }
 })
 

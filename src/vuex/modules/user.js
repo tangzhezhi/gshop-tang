@@ -8,16 +8,17 @@ import {
   LOGOUT,
 } from '../mutation-types'
 
+
 const state = {
   user: {}, // 登陆的用户
   token: localStorage.getItem('token_key'), // 登陆token标识
 }
 
 const mutations = {
-  [RECEIVE_USER] (state, {user}) {
+  [RECEIVE_USER] (state, user) {
     state.user = user
   },
-  [RECEIVE_TOKEN] (state, {token}) {
+  [RECEIVE_TOKEN] (state, token) {
     state.token = token
   },
   [LOGOUT] (state) {
@@ -27,6 +28,11 @@ const mutations = {
 }
 
 const actions = {
+
+  getUserInfo({commit},user){
+      commit(RECEIVE_USER, user)
+  },
+
   /* 
   保存用户的同步action
   */
@@ -35,8 +41,8 @@ const actions = {
     const token = user.token
     localStorage.setItem('token_key', token)
     delete user.token
-    commit(RECEIVE_USER, {user})
-    commit(RECEIVE_TOKEN, {token})
+    commit(RECEIVE_USER, user)
+    commit(RECEIVE_TOKEN, token)
   },
 
   /* 

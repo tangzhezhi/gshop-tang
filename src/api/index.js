@@ -4,10 +4,14 @@
 */
 import user from './user'
 import msite from './msite'
+import notice from './notice'
+import contact from './contact'
 
 
 
 export default {
     user,
-    msite
+    msite,
+    notice,
+    contact
 }

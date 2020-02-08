@@ -22,9 +22,33 @@ module.exports = {
         }
     },
     chainWebpack: (config) => {
+
+        // 设置svg
+        const svgRule = config.module.rule('svg')
+        svgRule.uses.clear();
+        svgRule
+            .test(/\.svg$/)
+            .include.add(path.resolve(__dirname, './src/icon/svg'))
+            .end()
+            .use('svg-sprite-loader')
+            .loader('svg-sprite-loader')
+            .options({
+                symbolId: 'icon-[name]'
+            });
+
         config.resolve.alias
             .set('@',resolve('src'))
             .set('mui', ('src/assets/mui/js/mui.min.js'))
+
+        // const fileRule = config.module.rule('file');
+        // fileRule.uses.clear();
+        // fileRule
+        //     .test(/\.svg$/)
+        //     .exclude.add(path.resolve(__dirname, './src/icons/svg'))
+        //     .end()
+        //     .use('file-loader')
+        //     .loader('file-loader');
+
     },
     /* 编写webpack支持的配置 */
     configureWebpack: {
@@ -35,7 +59,7 @@ module.exports = {
                 '@': resolve('src'),
                 'components': resolve('src/components'),
                 'pages': resolve('src/pages'),
-                'mui':resolve('src/assets/mui/js/mui.min.js')
+                'mui':resolve('src/assets/mui/js/mui.min.js'),
             }
         },
         plugins: [
@@ -43,7 +67,8 @@ module.exports = {
                 mui: "mui",
                 "window.mui": "mui"
             })
-        ]
+        ],
+
     },
 
 

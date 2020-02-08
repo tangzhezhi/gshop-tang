@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import mui from './assets/mui/js/mui.min.js'
+import muiIndexedlist from './assets/mui/js/mui.indexedlist.js'
 import VueLazyload from 'vue-lazyload'
 import loading from './common/images/loading.gif'
 import './validate'
@@ -7,11 +8,13 @@ import store from './vuex/store'
 import router from './router'
 import  App from './App.vue'
 import  API from './api'
+import  './icon/index'
 
 import './assets/mui/fonts/mui.ttf'
 import './assets/mui/fonts/mui-icons-extra.ttf'
 import './assets/mui/css/mui.min.css'
 import './assets/mui/css/style.css'
+
 
 Vue.prototype.$mui = mui
 

@@ -35,6 +35,7 @@
 
 <script>
     const mui = window.mui;
+
     export default {
         name: "Login",
         data () {

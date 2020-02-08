@@ -7,5 +7,7 @@ module.exports = {
             "style":true
         }]
     ],
-    "ignore": ["src/assets/mui/js/mui.min.js"]
+    "ignore": [
+        "src/assets/mui/js/*.js"
+    ]
 }

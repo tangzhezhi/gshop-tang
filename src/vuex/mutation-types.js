@@ -4,3 +4,5 @@
 export const RECEIVE_USER = 'receive_user'
 export const RECEIVE_TOKEN = 'receive_token'
 export const LOGOUT = 'logout'
+
+export const RECEIVE_MENU = 'receive_menu'

@@ -4,5 +4,12 @@ export default {
         method:"post",
         corsUrl:"/api",
         isForm: true
+    },
+
+    getUserInfo: {
+        url: "/getUserInfo",
+        method:"post",
+        corsUrl:"/api",
+        isForm: true
     }
 }
