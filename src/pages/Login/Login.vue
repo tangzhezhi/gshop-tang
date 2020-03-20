@@ -10,21 +10,33 @@
             <div class="login-logo">
                 <b><img src="../../static/img/logo.png" alt="易上学"></b>
             </div>
-            <form id='login-form' class="mui-input-group">
-                <div class="mui-input-row">
-                    <label>账号</label>
-                    <input id='tel' type="tel" maxlength="11"  class="mui-input-clear mui-input" placeholder="请输入账号"  name="phone" v-model="phone"  v-validate="'required|mobile'">
-                </div>
-                <p style="color: red;text-align: center" v-show="errors.has('phone')">{{ errors.first('phone') }}</p>
-                <div class="mui-input-row">
-                    <label>密码</label>
-                    <input type="password" class="mui-input-password" minlength="6"  placeholder="请输入密码" name="pwd" v-model="pwd">
-                </div>
-                <p style="color: red;text-align: center" v-show="errors.has('pwd')">{{ errors.first('pwd') }}</p>
 
-            </form>
+            <div style="padding: 10px 10px;">
+                <div id="segmentedControl" class="mui-segmented-control mui-segmented-control-inverted mui-segmented-control-primary">
+                    <a class="mui-control-item mui-active" href="#student" @tap="selectUserType(1)">学生</a>
+                    <a class="mui-control-item" href="#teacher" @tap="selectUserType(2)">老师</a>
+                </div>
+            </div>
+
+            <div>
+                <form id='login-form' class="mui-input-group">
+                    <div class="mui-input-row">
+                        <label>账号</label>
+                        <input id='tel' type="tel" maxlength="11"
+                               class="mui-input-clear mui-input" placeholder="请输入账号"  name="phone" v-model="phone"  v-validate="'required|mobile'">
+                    </div>
+                    <p style="color: red;text-align: center" v-show="errors.has('phone')">{{ errors.first('phone') }}</p>
+                    <div class="mui-input-row">
+                        <label>密码</label>
+                        <input type="password" class="mui-input-password" minlength="6"  placeholder="请输入密码" name="pwd" v-model="pwd">
+                    </div>
+                    <p style="color: red;text-align: center" v-show="errors.has('pwd')">{{ errors.first('pwd') }}</p>
+                </form>
+            </div>
+
+
             <div class="mui-content-padded">
-                <button id='login' class="mui-btn mui-btn-block mui-btn-primary" @click.prevent="login">登录</button>
+                <button id='login' class="mui-btn mui-btn-block mui-btn-primary" @tap="login">登录</button>
                 <div class="link-area"><a id='reg'>注册账号</a> <span class="spliter">|</span> <a id='forgetPassword'>忘记密码</a></div>
             </div>
         </div>
@@ -42,9 +54,19 @@
             return {
                 phone: '', // 手机号
                 pwd: '', // 密码
+                userType:2,
             }
         },
+        created(){
+
+
+        },
         methods:{
+
+            selectUserType(userType){
+                this.userType = userType;
+            },
+
             /* 登陆 */
             async login () {
                 // 进行前台表单验证
