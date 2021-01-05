@@ -11,7 +11,7 @@
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.8.3",
     "@packy-tang/vue-tinymce": "^1.0.0",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "babel-plugin-transform-remove-strict-mode": "^0.0.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
